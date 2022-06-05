@@ -1,5 +1,17 @@
 {
+	"name" : "simple-vpc",
     "image": "dkothari777/vscode-devcontainer:infra_latest",
     "mounts": ["source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,readonly,consistency=cached"],
-    "postAttachCommand": "git config --global core.editor \"code --wait\""
+    "postAttachCommand": "git config --global core.editor \"code --wait\"",
+    "portsAttributes": {
+		"9000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
+	"extensions": [
+		"hashicorp.terraform",
+		"tsandall.opa",
+		"ms-azuretools.vscode-docker"
+	]
 }
