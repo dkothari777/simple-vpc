@@ -1,3 +1,5 @@
 {
-    "image": "dkothari777/vscode-devcontainer:infra_latest"
+    "image": "dkothari777/vscode-devcontainer:infra_latest",
+    "mounts": ["source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,readonly,consistency=cached"],
+    "postAttachCommand": "git config --global core.editor \"code --wait\""
 }
